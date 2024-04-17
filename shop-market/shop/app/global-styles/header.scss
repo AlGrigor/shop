@@ -1,0 +1,66 @@
+.header {
+    --color: #fff;
+    position: relative;
+    z-index: 3;
+    background-color: #1D2533;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 0px 8px 0px rgba(0, 0, 0, 0.10);
+    color: var(--color);
+
+    &_container {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (width < 768px) {
+            align-items: flex-end;
+        }
+    }
+
+    & :is(.header_burger, 
+    .header_links_item--favorites, 
+    .header_links_item--compare, 
+    .header_links_item--cart) {
+        @media (width < 768px) {
+            display: none;
+        }
+    }
+
+    .header_burger {
+        position: relative;
+        font-size: 24px;
+        min-height: 24px;
+        color: var(--color);
+
+        &:hover {
+            --color: #9466FF;
+            transition: .2s linear;
+            text-shadow: 0 0 2px var(--color);
+        }
+
+        svg {
+            fill: var(--color);
+            margin-right: 12px;
+            margin-bottom: 4px;
+        }
+    }
+
+    .header_links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+
+        .header_links_item {
+
+            &:hover {
+                --color: #9466FF;
+                transition: .2s linear;
+            }
+
+            svg {
+                fill: var(--color);
+            }
+        }
+    }
+}

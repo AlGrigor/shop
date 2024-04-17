@@ -1,0 +1,17 @@
+.logo {
+    font-size: 40px;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    color: var(--color);
+
+    &:hover {
+        --color: #9466FF;
+        transition: .2s linear;
+        text-shadow: 0 0 4px var(--color);
+    }
+
+    span {
+        line-height: 1;
+    }
+}

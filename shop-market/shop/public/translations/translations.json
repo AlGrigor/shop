@@ -1,0 +1,14 @@
+{
+    "en": {
+        "header": {
+            "menu_btn": "Menu"
+        },
+        "logo": "Shop"
+    },
+    "ru":{
+        "header": {
+            "menu_btn": "Меню"
+        },
+        "logo": "Магазин"
+    }
+}

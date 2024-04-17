@@ -49,12 +49,19 @@ a {
   padding: 0 15px;
 }
 
-.btn-reset {
+.bttn-reset {
   margin: 0;
   padding: 0;
   cursor: pointer;
   background-color: transparent;
   border: none;
+  color: inherit;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .overflow-hidden {
