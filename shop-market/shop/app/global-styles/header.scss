@@ -37,6 +37,10 @@
             --color: #9466FF;
             transition: .2s linear;
             text-shadow: 0 0 2px var(--color);
+
+            & svg{
+                filter: blur(1px);
+            }
         }
 
         svg {
@@ -50,12 +54,16 @@
         display: flex;
         gap: 32px;
         align-items: center;
+        @media (width < 768px) {
+            gap: 18px;
+        }
 
         .header_links_item {
 
             &:hover {
                 --color: #9466FF;
                 transition: .2s linear;
+                filter: blur(1px);
             }
 
             svg {

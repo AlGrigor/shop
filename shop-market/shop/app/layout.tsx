@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./global-styles/globals.scss";
+import "./global-styles/header.scss";
+import "./global-styles/menu.scss";
 import Layout from "@/components/layouts/Layout";
 
 export const metadata: Metadata = {

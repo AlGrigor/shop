@@ -1,6 +1,6 @@
 import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
-import "@/styles/logo.scss"
+import "./logo.scss"
 
 const Logo = () => {
     const { lang, translations } = useLang();

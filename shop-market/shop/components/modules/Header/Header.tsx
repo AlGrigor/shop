@@ -3,19 +3,29 @@
 import Logo from "@/components/elements/Logo/Logo";
 import { useLang } from "@/hooks/useLang";
 import Link from "next/link";
-import "@/app/global-styles/header.scss"
 import { IconsList } from "@/components/elements/icons/iconsList";
 import Icons from "@/components/elements/icons/Icons";
+import Menu from "./Menu";
+import { openMenu } from "@/context/modals";
+import { addOverflowHiddenToBody } from "@/lib/utils/common";
 
 const Header = () => {
     const { lang, translations } = useLang();
 
+    function handleOpenMenu(){
+        addOverflowHiddenToBody();
+        openMenu();
+    }
+
     return (<header className="header">
         <div className="container header_container">
-            <button className="bttn-reset header_burger">
+            <button className="bttn-reset header_burger" onClick={handleOpenMenu}>
                 <Icons name={IconsList.BURGER} />
                 {translations[lang].header.menu_btn}
             </button>
+
+            <Menu/>
+
             <div className="header_logo">
                 <Logo />
             </div>
