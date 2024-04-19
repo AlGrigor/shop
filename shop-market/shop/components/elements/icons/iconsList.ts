@@ -5,4 +5,5 @@ export enum IconsList {
     COMPARE = 'compare',
     CART = 'cart',
     PROFILE = 'profile',
+    CLOSE = 'close',
 }

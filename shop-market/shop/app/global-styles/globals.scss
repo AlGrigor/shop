@@ -29,10 +29,11 @@
 }
 
 body {
+  --color: #fff;
   font-family: Rostelecom Basis;
   font-weight: 400;
   background-color: #1D2533;
-  color: #E8E9EA;
+  color: var(--color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,4 +68,23 @@ a {
 .overflow-hidden {
   overflow-y: hidden;
   padding-right: 8px;
+}
+
+.svg-wrapper {
+
+  &:hover{
+    --color: #9466FF;
+    transition: .2s linear;
+
+    svg{
+      filter: blur(1px);
+    }
+  }
+  svg{
+    fill: var(--color);
+  }
+}
+
+.text-hover:hover{
+  text-shadow: 0 0 2px var(--color);
 }

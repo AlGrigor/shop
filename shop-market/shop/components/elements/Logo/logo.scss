@@ -4,6 +4,7 @@
     align-items: flex-end;
     gap: 4px;
     color: var(--color);
+    width: max-content;
 
     &:hover {
         --color: #9466FF;

@@ -5,6 +5,7 @@ import Favorites from "@/public/icons/Favorites";
 import Compare from "@/public/icons/Compare";
 import Cart from "@/public/icons/Cart";
 import Profile from "@/public/icons/Profile";
+import Close from "@/public/icons/Close";
 
 interface IconsProps {
     name: IconsList;
@@ -32,6 +33,9 @@ const Icons = ({ name }: IconsProps) => {
             break;
         case IconsList.PROFILE:
             return <Profile />
+            break;
+            case IconsList.CLOSE:
+            return <Close />
             break;
     }
 }

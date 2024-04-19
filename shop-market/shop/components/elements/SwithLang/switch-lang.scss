@@ -1,0 +1,18 @@
+.switch-lang{
+    display: flex;
+    gap: 24px;
+
+    & .switch-lang_bttn{
+        padding: 12px 24px;
+        border: 2px solid var(--color);
+        border-radius: 32px;
+        opacity: .4;
+        transition: .2s linear;
+
+        &:hover,
+        &.active{
+            opacity: 1;
+            border-color: #9466FF;
+        }
+    }
+}

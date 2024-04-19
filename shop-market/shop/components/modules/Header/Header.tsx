@@ -19,7 +19,7 @@ const Header = () => {
 
     return (<header className="header">
         <div className="container header_container">
-            <button className="bttn-reset header_burger" onClick={handleOpenMenu}>
+            <button className="bttn-reset header_burger svg-wrapper text-hover" onClick={handleOpenMenu}>
                 <Icons name={IconsList.BURGER} />
                 {translations[lang].header.menu_btn}
             </button>
@@ -31,27 +31,27 @@ const Header = () => {
             </div>
             <ul className="header_links list-reset">
                 <li className="header_links_item header_links_item--search">
-                    <button className="bttn-reset header_links_item_bttn" >
+                    <button className="bttn-reset header_links_item_bttn svg-wrapper" >
                         <Icons name={IconsList.SEARCH} />
                     </button>
                 </li>
                 <li className="header_links_item header_links_item--favorites">
-                    <Link href="/favorites" className="bttn-reset header_links_item_bttn" >
+                    <Link href="/favorites" className="bttn-reset header_links_item_bttn svg-wrapper" >
                         <Icons name={IconsList.FAVORITES} />
                     </Link>
                 </li>
                 <li className="header_links_item header_links_item--compare">
-                    <Link href="/comparison" className="bttn-reset header_links_item_bttn" >
+                    <Link href="/comparison" className="bttn-reset header_links_item_bttn svg-wrapper" >
                         <Icons name={IconsList.COMPARE} />
                     </Link>
                 </li>
                 <li className="header_links_item header_links_item--cart">
-                    <Link href="/cart" className="bttn-reset header_links_item_bttn" >
+                    <Link href="/cart" className="bttn-reset header_links_item_bttn svg-wrapper" >
                         <Icons name={IconsList.CART} />
                     </Link>
                 </li>
                 <li className="header_links_item header_links_item--profile">
-                    <Link href="/profile" className="bttn-reset header_links_item_bttn" >
+                    <Link href="/profile" className="bttn-reset header_links_item_bttn svg-wrapper" >
                         <Icons name={IconsList.PROFILE} />
                     </Link>
                 </li>
