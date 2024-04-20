@@ -90,6 +90,8 @@
   &_container{
     position: relative;
     animation: show-content 1.2s ease-out forwards;
+    z-index: 2;
+    min-height: 100%;
 
     @keyframes show-content {
       0%{
@@ -112,6 +114,16 @@
     .switch-lang-wrapper{
       display: flex;
       justify-content: end;
+    }
+
+    .bg{
+      z-index: -1;
+      position: absolute;
+      height: 120%;
+      object-fit: contain;
+      right: -140px;
+      top: -10%;
+      animation: show-content 1.2s linear forwards;
     }
   }
 }
