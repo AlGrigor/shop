@@ -7,7 +7,7 @@ const Logo = () => {
   const { lang, translations } = useLang();
   return (
     <Link className='logo' href='/'>
-      <Image src='/img/Logo.svg' alt='Logo shop' />
+      <Image src='/img/Logo.svg' alt='Logo shop' width={30} height={50} />
       <span>{translations[lang].logo}</span>
     </Link>
   );

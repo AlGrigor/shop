@@ -19,7 +19,13 @@ const Menu = () => {
   return (
     <nav className={`nav-menu ${menuIsOpen ? 'open' : 'close'}`}>
       <div className='container nav-menu_container'>
-        <Image src='/img/menuBg.svg' alt='bg' className='bg' />
+        <Image
+          src='/img/menuBg.svg'
+          alt='bg'
+          className='bg'
+          width={100}
+          height={100}
+        />
         <button
           className='bttn-reset bttn-close-menu svg-wrapper'
           onClick={handleCloseMenu}

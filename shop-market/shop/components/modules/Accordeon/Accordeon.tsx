@@ -16,6 +16,7 @@ const Accordeon = ({
         initial={false}
         onClick={() => setExpanded(!expanded)}
         className={`bttn-reset ${titleClass}
+        ${expanded ? 'active' : ''}
     ${rotateIconClass ? (expanded ? rotateIconClass : '') : ''}`}
       >
         {title}

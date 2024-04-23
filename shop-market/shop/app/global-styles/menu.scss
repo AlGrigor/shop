@@ -69,7 +69,7 @@
     }
   }
 
-  &.close{
+  &.close {
     display: none;
   }
 
@@ -80,24 +80,24 @@
     background-color: #101828;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #9466FF;
+    background-color: #9466ff;
     border-radius: 3px;
   }
   &::-webkit-scrollbar-thumb:hover {
-    background-color: #70F;
+    background-color: #70f;
   }
 
-  &_container{
+  &_container {
     position: relative;
     animation: show-content 1.2s ease-out forwards;
     z-index: 2;
     min-height: 100%;
 
     @keyframes show-content {
-      0%{
+      0% {
         opacity: 0;
       }
-      80%{
+      80% {
         opacity: 0;
       }
       100% {
@@ -105,18 +105,18 @@
       }
     }
 
-    .bttn-close-menu{
+    .bttn-close-menu {
       position: absolute;
       top: 0;
       right: 20px;
     }
 
-    .switch-lang-wrapper{
+    .switch-lang-wrapper {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
     }
 
-    .bg{
+    .bg {
       z-index: -1;
       position: absolute;
       height: 120%;
@@ -124,6 +124,75 @@
       right: -140px;
       top: -10%;
       animation: show-content 1.2s linear forwards;
+    }
+
+    .menu-content-wrapper {
+      --color-white-muted: #777c85;
+      --color: #fff;
+      padding-top: 150px;
+
+      .nav-menu_list_item {
+        position: relative;
+
+        .nav-menu_list_item_bttn {
+          font-size: 28px;
+          color: var(--color-white-muted);
+          font-weight: 800;
+          line-height: 32px;
+          padding-bottom: 48px;
+        }
+
+        &.active {
+          z-index: 2;
+
+          .nav-menu_list_item_bttn {
+            color: var(--color);
+          }
+        }
+
+        .nav-menu_accordeon {
+          position: absolute;
+          top: 0;
+          left: clamp(500px, 30.3977rem + 4.5455vw, 550px);
+
+          .nav-menu_list_item_line {
+            position: absolute;
+            left: 0;
+            padding-top: 8px;
+            transform: translateX(-120%);
+          }
+        }
+
+        .nav-menu_accordeon_item {
+          font-size: 16px;
+          line-height: 42px;
+
+          .nav-menu_accordeon_item_title {
+            color: var(--color-white-muted);
+            font-weight: 550;
+
+            &.active {
+              color: var(--color);
+            }
+          }
+
+          .nav-menu_accordeon_item_list {
+            padding-left: 32px;
+
+            .nav-menu_accordeon_item_list_item_link:hover {
+              color: #9466ff;
+              font-weight: 200;
+            }
+          }
+          .nav-menu_accordeon_item_link {
+            font-weight: 550;
+
+            &:hover {
+              color: #9466ff;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Accordeon from '../Accordeon/Accordeon';
 import { usePathname } from 'next/navigation';
 import MenuLinkItem from './MenuLinkItem';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface props {
   handleCloseMenu: () => void;
@@ -30,6 +32,16 @@ const MenuContent = ({ handleCloseMenu }: props) => {
     setShowCatalogList(true);
     setShowBuyersList(false);
     setShowContactsList(false);
+  };
+  const handleShowBuyersList = () => {
+    setShowCatalogList(false);
+    setShowBuyersList(true);
+    setShowContactsList(false);
+  };
+  const handleShowContactsList = () => {
+    setShowCatalogList(false);
+    setShowBuyersList(false);
+    setShowContactsList(true);
   };
 
   const clothLinks = [
@@ -100,7 +112,7 @@ const MenuContent = ({ handleCloseMenu }: props) => {
   ];
   return (
     <ul className='list-reset nav-menu_list'>
-      <li className='nav-menu_list_item'>
+      <li className={`nav-menu_list_item ${showCatalogList ? 'active' : ''}`}>
         <button
           className='bttn-reset nav-menu_list_item_bttn'
           onMouseEnter={handleShowCatalogList}
@@ -115,12 +127,20 @@ const MenuContent = ({ handleCloseMenu }: props) => {
               exit={{ opacity: 0 }}
               className='list-reset nav-menu_accordeon'
             >
+              <div className='nav-menu_list_item_line'>
+                <Image
+                  src='/img/linePunktir.svg'
+                  alt='line'
+                  width={224}
+                  height={2}
+                />
+              </div>
               <li className='nav-menu_accordeon_item'>
                 <Accordeon
                   title={translations[lang].main_menu.cloth}
                   titleClass='btt-reset nav-menu_accordeon_item_title'
                 >
-                  <ul className='nav-menu_accordeon_item_list'>
+                  <ul className='list-reset nav-menu_accordeon_item_list'>
                     {clothLinks.map((item) => (
                       <MenuLinkItem
                         key={item.id}
@@ -136,7 +156,7 @@ const MenuContent = ({ handleCloseMenu }: props) => {
                   title={translations[lang].main_menu.accessories}
                   titleClass='btt-reset nav-menu_accordeon_item_title'
                 >
-                  <ul className='nav-menu_accordeon_item_list'>
+                  <ul className='list-reset nav-menu_accordeon_item_list'>
                     {accessoriesLinks.map((item) => (
                       <MenuLinkItem
                         key={item.id}
@@ -152,7 +172,7 @@ const MenuContent = ({ handleCloseMenu }: props) => {
                   title={translations[lang].main_menu.souvenirs}
                   titleClass='btt-reset nav-menu_accordeon_item_title'
                 >
-                  <ul className='nav-menu_accordeon_item_list'>
+                  <ul className='list-reset nav-menu_accordeon_item_list'>
                     {souvenirsLinks.map((item) => (
                       <MenuLinkItem
                         key={item.id}
@@ -168,7 +188,7 @@ const MenuContent = ({ handleCloseMenu }: props) => {
                   title={translations[lang].main_menu.office}
                   titleClass='btt-reset nav-menu_accordeon_item_title'
                 >
-                  <ul className='nav-menu_accordeon_item_list'>
+                  <ul className='list-reset nav-menu_accordeon_item_list'>
                     {officeLinks.map((item) => (
                       <MenuLinkItem
                         key={item.id}
@@ -183,8 +203,118 @@ const MenuContent = ({ handleCloseMenu }: props) => {
           )}
         </AnimatePresence>
       </li>
-      <li className='nav-menu_list_item'></li>
-      <li className='nav-menu_list_item'></li>
+      <li className={`nav-menu_list_item ${showBuyersList ? 'active' : ''}`}>
+        <button
+          className='bttn-reset nav-menu_list_item_bttn'
+          onMouseEnter={handleShowBuyersList}
+        >
+          {translations[lang].main_menu.buyers}
+        </button>
+        <AnimatePresence>
+          {showBuyersList && (
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className='list-reset nav-menu_accordeon'
+            >
+              <div className='nav-menu_list_item_line'>
+                <Image
+                  src='/img/linePunktir.svg'
+                  alt='line'
+                  width={224}
+                  height={2}
+                />
+              </div>
+              <li className='nav-menu_accordeon_item'>
+                <Link href='/about' className='nav-menu_accordeon_item_link'>
+                  {translations[lang].main_menu.about}
+                </Link>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <Link href='/blog' className='nav-menu_accordeon_item_link'>
+                  {translations[lang].main_menu.blog}
+                </Link>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <Link
+                  href='/shipping-and-payment'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  {translations[lang].main_menu.shipping}
+                </Link>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <Link
+                  href='/purchase-returns'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  {translations[lang].main_menu.returns}
+                </Link>
+              </li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </li>
+      <li className={`nav-menu_list_item ${showContactsList ? 'active' : ''}`}>
+        <button
+          className='bttn-reset nav-menu_list_item_bttn'
+          onMouseEnter={handleShowContactsList}
+        >
+          {translations[lang].main_menu.contacts}
+        </button>
+        <AnimatePresence>
+          {showContactsList && (
+            <motion.ul
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className='list-reset nav-menu_accordeon'
+            >
+              <div className='nav-menu_list_item_line'>
+                <Image
+                  src='/img/linePunktir.svg'
+                  alt='line'
+                  width={224}
+                  height={2}
+                />
+              </div>
+              <li className='nav-menu_accordeon_item'>
+                <a
+                  href='tel:+74990000000'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  +7 (499) 000 00 00
+                </a>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <a
+                  href='mailto:test@gmail.com'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  test@gmail.com
+                </a>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <Link
+                  href='https://t.me/test_tusz6235ecg4fy'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  {translations[lang].main_menu.tg}
+                </Link>
+              </li>
+              <li className='nav-menu_accordeon_item'>
+                <Link
+                  href='https://vk.com'
+                  className='nav-menu_accordeon_item_link'
+                >
+                  {translations[lang].main_menu.vk}
+                </Link>
+              </li>
+            </motion.ul>
+          )}
+        </AnimatePresence>
+      </li>
     </ul>
   );
 };
