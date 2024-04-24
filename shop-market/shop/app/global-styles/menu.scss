@@ -120,6 +120,7 @@
       z-index: -1;
       position: absolute;
       height: 120%;
+      width: auto;
       object-fit: contain;
       right: -140px;
       top: -10%;
@@ -140,6 +141,10 @@
           font-weight: 800;
           line-height: 32px;
           padding-bottom: 48px;
+
+          @media (width < 550px) {
+            padding-bottom: 10px;
+          }
         }
 
         &.active {
@@ -155,11 +160,27 @@
           top: 0;
           left: clamp(500px, 30.3977rem + 4.5455vw, 550px);
 
+          @media (width < 768px) {
+            left: clamp(340px, 7vw, 550px);
+          }
+          @media (width < 550px) {
+            position: relative;
+            left: 32px;
+          }
+
           .nav-menu_list_item_line {
             position: absolute;
             left: 0;
             padding-top: 8px;
             transform: translateX(-120%);
+
+            @media (width < 768px) {
+              overflow: hidden;
+              max-width: 100px;
+            }
+            @media (width < 550px) {
+              display: none;
+            }
           }
         }
 
@@ -171,7 +192,8 @@
             color: var(--color-white-muted);
             font-weight: 550;
 
-            &.active {
+            &.active,
+            &:hover {
               color: var(--color);
             }
           }

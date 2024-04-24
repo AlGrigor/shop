@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <>
+    <div className='container'>
       <h1>Page</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vero ab
@@ -114,6 +114,6 @@ export default function Home() {
         explicabo? Placeat excepturi, quia illo quae saepe asperiores expedita.
         Maiores, culpa! Quae.
       </p>
-    </>
+    </div>
   );
 }
